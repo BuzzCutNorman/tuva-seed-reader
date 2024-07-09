@@ -27,7 +27,7 @@ Connect to your PostgreSQL Server and complete these steps:
     pipx install git+https://github.com/BuzzCutNorman/tuva-seed-reader.git
     ```
 
-## Override the load_seed Macro ##
+## Override the `load_seed` Macro ##
 In your DBT project folder open your dbt_project.yml and andd the below dispatch: .  Change the placeholder 'your_project_name_here' to you project's macro name space.  If you do not have, one use the name of your project.  That is what I did and it seems to work nicely.
 
 ```
