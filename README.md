@@ -26,6 +26,10 @@ Connect to your PostgreSQL Server and complete these steps:
     ```bash
     pipx install https://github.com/BuzzCutNorman/tuva-seed-reader/archive/refs/heads/main.zip
     ```
+6. Test you can run the Tuva Seed Reader
+    ```bash
+    tuva-seed-reader
+    ```
 
 ## Override the `load_seed` Macro ##
 In your DBT project folder open your dbt_project.yml and andd the below dispatch: .  Change the placeholder 'your_project_name_here' to you project's macro name space.  If you do not have, one use the name of your project.  That is what I did and it seems to work nicely.
@@ -57,5 +61,5 @@ COPY {{ this }}
 {% endmacro %}
 ```
 
-## Testing ##
+### Testing ###
 I would suggest running `dbt seed` or `dbt build`.  Hopefully you will see all the terminology, reference, and valueset data get seeded properly.  If you have, a failure and you want to see more in the logs you can add `--log-level debug` to the dbt command you used.
