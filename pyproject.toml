@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "tuva-seed-reader"
+version = "0.1.0"
+description = "Helper application that reads Tuva Seed files from S3"
+authors = ["Dan Norman <buzzcutnorman@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4.0"
+smart-open = {extras = ["s3"], version = "^7.0.4"}
+typer-slim = "^0.12.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+tuva-seed-reader = 'tuva_seed_reader.reader:typer_run_main' 
