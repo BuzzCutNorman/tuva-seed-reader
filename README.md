@@ -24,7 +24,7 @@ Connect to your PostgreSQL Server and complete these steps:
     ```
 5. Install tuva seed reader.
     ```bash
-    pipx install git+https://github.com/BuzzCutNorman/tuva-seed-reader.git
+    pipx install https://github.com/BuzzCutNorman/tuva-seed-reader/archive/refs/heads/main.zip
     ```
 
 ## Override the `load_seed` Macro ##
