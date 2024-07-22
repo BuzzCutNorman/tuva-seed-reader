@@ -1,8 +1,8 @@
 # Tuva Seed Reader #
-This little application is to be used in conjunction with The Tuva Project DBT package when utilizing PostgesSQL for you datawarehouse.  The Tuva Seed Reader allows you to override the load_seed macro with a PostgreSQL version that leverages COPY FROM PROGRAM.  You guessed it the program that you are copying the data from is the Tuva Seed Reader.  The same URI and PATTERN argumanets passed in the post-hook calls found in The Tuva Project dbt_project.yml file.
+This little application is to be used in conjunction with The Tuva Project DBT package when utilizing PostgesSQL for you datawarehouse.  The Tuva Seed Reader allows you to override the load_seed macro with a PostgreSQL version that leverages COPY FROM PROGRAM.  You guessed it the program that you are copying the data from is the Tuva Seed Reader.  The same URI and PATTERN argumanets passed to the post-hook calls found in The Tuva Project dbt_project.yml file are used by the Tuva Seed Reader.
 
 ## How Get it Working ##
-You need to complete two task in order to get the Tuva Seed Reader and working with the Tuva data project.
+You need to complete two task in order to get the Tuva Seed Reader working with your Tuva data project.
 
 1) Install the tuva seed reader on you PostgresSQL server.
 2) Override the load_macro macro in your DBT Project.
@@ -24,7 +24,7 @@ Connect to your PostgreSQL Server and complete these steps:
     ```
 5. Install tuva seed reader.
     ```bash
-    pipx install https://github.com/BuzzCutNorman/tuva-seed-reader/archive/refs/heads/main.zip
+    pipx install https://github.com/tuva-health/tuva-seed-reader/archive/refs/heads/main.zip
     ```
 6. Test you can run the Tuva Seed Reader
     ```bash
@@ -32,7 +32,7 @@ Connect to your PostgreSQL Server and complete these steps:
     ```
 
 ## Override the `load_seed` Macro ##
-In your DBT project folder open your dbt_project.yml and andd the below dispatch: .  Change the placeholder 'your_project_name_here' to you project's macro name space.  If you do not have, one use the name of your project.  That is what I did and it seems to work nicely.
+In your DBT project folder locate your dbt_project.yml file.  Open it and add the below dispatch.  Change the placeholder 'your_project_name_here' to you project's macro name space.  If you do not have, one use the name of your project.  That is what I did and it seems to work nicely.
 
 ```
 dispatch:
