@@ -2,6 +2,8 @@
 import boto3
 import sys
 import typer
+from botocore import UNSIGNED
+from botocore.config import Config
 from smart_open import open
 
 
@@ -59,8 +61,10 @@ def main(uri:str, pattern:str)  -> None:
     
     """
     # AWS S3 client object to be used
+    # from https://github.com/boto/boto3/issues/1200
     tuva_s3_client = boto3.client(
         service_name="s3",
+        config=Config(signature_version=UNSIGNED)
     )
 
     # Populate variable neccary to read the contents of the Tuva seed files.
