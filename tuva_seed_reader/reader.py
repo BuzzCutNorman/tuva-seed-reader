@@ -58,17 +58,9 @@ def main(uri:str, pattern:str)  -> None:
            writes there contents out to stdout. 
     
     """
-    # The Tuva Project S3 Access Info
-    tuva_region_name:str = "us-east-1"
-    tuva_aws_access_key_id:str="AKIA2EPVNTV4FLAEBFGE"
-    tuva_aws_secret_access_key:str="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"
-
     # AWS S3 client object to be used
     tuva_s3_client = boto3.client(
         service_name="s3",
-        region_name=tuva_region_name,
-        aws_access_key_id=tuva_aws_access_key_id,
-        aws_secret_access_key=tuva_aws_secret_access_key,
     )
 
     # Populate variable neccary to read the contents of the Tuva seed files.
